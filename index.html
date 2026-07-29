@@ -11,13 +11,47 @@
     main{max-width:800px;margin:auto;padding-bottom:92px}.hero{display:grid;grid-template-columns:1fr auto;gap:12px;padding:23px 19px;color:#fff;background:linear-gradient(135deg,#0b402d,#126944);border-radius:0 0 25px 25px}.eyebrow{font-size:11px;letter-spacing:.12em;font-weight:800;color:#c9e7d2}.hero h1{font-size:27px;line-height:1.2;margin:8px 0}.hero p{margin:0;font-size:14px;color:#d8ebdf}.brand{width:120px;text-align:center}.brand>.logo{width:115px;height:51px;object-fit:contain}.qrs{display:flex;gap:6px;justify-content:center}.qr{width:54px;padding:3px;border-radius:6px;background:#fff;color:#244234;font-size:8px;font-weight:700}.qr img{display:block;width:100%}.progress{grid-column:1/-1;padding:10px;border:1px solid #ffffff2d;border-radius:11px;font-size:12px}.progress b{font-size:21px}.track{height:6px;margin:7px 0;overflow:hidden;border-radius:6px;background:#ffffff33}.track i{display:block;width:0;height:100%;background:#d8ef75}.stats{display:flex;justify-content:space-between}
     .card,section{margin:13px;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff}.meta{padding:14px}.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}section h2{margin:0;padding:14px;border-bottom:1px solid var(--line);color:var(--g);font-size:16px}article{padding:13px;border-bottom:1px solid #edf1ee}article:last-child{border:0}article b{line-height:1.5}.choice{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:9px 0}.choice button{padding:7px;border:1px solid #d2e0d6;border-radius:8px;background:#fff;color:#607066}.pass{background:#edf8ef}.review{background:#fff8e9}.fail{background:#fff0ed}.on.pass{background:#d7efde!important;color:#087038!important}.on.review{background:#ffedc7!important;color:#986004!important}.on.fail{background:#ffdcd8!important;color:#a43b32!important}.foot{padding:14px}.foot h2{font-size:16px}.foot textarea{height:100px}.actions{position:fixed;z-index:5;right:0;bottom:0;left:0;display:flex;justify-content:center;gap:9px;padding:10px;background:#fffffff0;border-top:1px solid var(--line);backdrop-filter:blur(8px)}.actions button{padding:10px 14px;border:1px solid #cbded1;border-radius:10px;background:#fff;color:var(--g);font-weight:800}.actions #export{width:auto;margin:0;border:0}.watermark{display:none}
     @media(max-width:440px){.hero{grid-template-columns:1fr 100px}.brand{width:100px}.brand>.logo{width:96px}.qr{width:45px}.hero h1{font-size:24px}}
-    @media print{@page{size:A4;margin:10mm}.actions{display:none}body{background:#fff}main{max-width:none;padding:0}.hero{padding:8mm;border-radius:0}.card,section{margin:5mm 0;break-inside:avoid;border-radius:8px}article{padding:7px}.choice{margin:5px 0}.choice button{padding:4px}.qrs{display:none}.watermark{position:fixed;inset:-12mm;z-index:10;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:52mm;gap:9mm 14mm;align-content:center;pointer-events:none;opacity:.09;transform:rotate(-45deg) scale(1.23)}.watermark div{display:flex;align-items:center;justify-content:center;gap:5px;color:var(--g);font-size:15px;font-weight:800}.watermark img{width:38px;height:25px;object-fit:contain}}
+    @media print {
+  .watermark {
+    display: grid !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 70mm;
+    align-content: center;
+    gap: 12mm;
+    pointer-events: none;
+    opacity: 0.09;
+    transform: rotate(-35deg) scale(1.15);
+  }
+
+  .watermark div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #0d5b3d;
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .watermark img {
+    width: 38px;
+    height: 25px;
+    object-fit: contain;
+  }
+}
   </style>
 </head>
 <body>
   <div id="gate">
     <div class="gate-card">
-      <img src="assets/xihongshi-logo.jpg" alt="熹红室">
+      <img src="assets/xihongshi_red.png" alt="熹红室">
       <h1>开始前请登记</h1>
       <p>填写勘察人姓名与联系方式后进入；允许定位后，将自动预填详细地址。</p>
       <label>勘察人姓名<input id="gateName" placeholder="请输入姓名"></label>
@@ -30,7 +64,7 @@
   <main>
     <header class="hero">
       <div><div class="eyebrow">XIHONGSHI · SELF-SERVICE CAR WASH</div><h1>自助洗车选址<br>现场检查清单</h1><p>逐项记录、快速形成清晰的选址判断。</p></div>
-      <div class="brand"><img class="logo" src="assets/xihongshi-logo.jpg" alt="熹红室"><div class="qrs"><div class="qr"><img src="assets/founder-chengdu.jpg" alt="创始人微信二维码">李卓伦</div><div class="qr"><img src="assets/founder-hu.jpg" alt="创始人微信二维码">胡志远</div></div></div>
+      <div class="brand"><img class="logo" src="assets/xihongshi_red.png" alt="熹红室"><div class="qrs"><div class="qr"><img src="assets/founder-chengdu.jpg" alt="创始人微信二维码">李卓伦</div><div class="qr"><img src="assets/founder-hu.jpg" alt="创始人微信二维码">胡志远</div></div></div>
       <div class="progress"><b id="done">0</b> / <span id="total">0</span> 项已判断<div class="track"><i id="bar"></i></div><div class="stats"><span>通过 <b id="pass">0</b></span><span>待确认 <b id="review">0</b></span><span>不通过 <b id="fail">0</b></span></div></div>
     </header>
     <div class="card meta">
@@ -49,7 +83,7 @@
       ['区位与客群',['8 公里内有大规模住宅区','8 公里内有产业园、办公区或稳定就业人群','8 公里内有商圈、商业街或高频消费场所','核心客群年龄以 40 岁以下为主']],
       ['客户动线与车辆通行',['从主路进入门店方便，转弯/掉头成本低','门头或入口清晰可见，容易被车主发现','有足够的排队等待位，不占用公共道路','出入口和内部路面宽敞，车辆会车、转弯顺畅','洗车后离场方便，不易造成回堵']],
       ['周边业态与环境',['附近无火锅、烧烤等重油烟/强异味业态','周边高峰期不易因餐饮、夜市等出现严重拥堵','周边环境整洁、安全，夜间照明与治安可接受']],
-      ['扰民与合规风险',['与住宅、学校、医院等敏感点保持合理距离','洗车噪声、夜间营业不易引发投诉','物业、社区或管理方对洗车经营无明确限制']],
+      ['扰民与合规风险',['与住宅、学校、医院等敏感点保持合理距离','洗车噪声、夜间营业不易引发投诉','物业、社区或管理方对洗车经营无明确限制','如涉及搭建集装箱或板房是否允许']],
       ['场地尺寸与布局',['场地面积满足计划洗车位和等候位需求','场地形状规整，可高效布置车位和设备','层高、雨棚/门头条件满足设备和运营需求','消防通道、设备区、收银区与车辆动线可同时满足']],
       ['水、电、排污',['有稳定供水，可满足高峰洗车用水量','电力容量、相数及增容条件满足设备需求','具备合法可接入的排水、污水处理条件','隔油沉砂、污水处理等设施的设置条件明确','水电排污接入、改造费用和责任已核实']],
       ['房租与经营测算',['月租/年租在项目测算可承受范围内','租期、续租权和租金递增条款可接受','押金、免租期、物业费及其他费用清晰','装修、设备安装和退租恢复责任已明确']],
@@ -70,7 +104,7 @@
     if(sessionStorage.getItem('xhs-gate'))$('gate').classList.add('hidden');
     $('clear').onclick=()=>{if(confirm('确定清空本次填写内容吗？')){localStorage.removeItem(key);location.reload()}};
     $('export').onclick=()=>{const name=$('site').value.trim()||'未命名场地';document.title='熹红室自助洗车选址_'+name.replace(/[\\/:*?"<>|]/g,'_');window.print()};
-    $('watermark').innerHTML=Array.from({length:12},()=>'<div><img src="assets/xihongshi-logo.jpg"><span>熹红室</span></div>').join('');
+    $('watermark').innerHTML=Array.from({length:12},()=>'<div><img src="assets/xihongshi_red.png"><span>熹红室</span></div>').join('');
     save();
   </script>
 </body>
